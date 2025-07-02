@@ -1,3 +1,4 @@
+//this is for the actual schedule to be made based on the studyplan
 const mongoose = require("mongoose");
 
 const taskSchema = new mongoose.Schema({
@@ -9,6 +10,11 @@ const taskSchema = new mongoose.Schema({
     enum: ["pending", "completed"],
     default: "pending",
   },
+    difficulty: {
+      type: String,
+      enum: ["Easy", "Medium", "Hard"],
+      default: "Medium",
+    },
   notes: String,
 });
 

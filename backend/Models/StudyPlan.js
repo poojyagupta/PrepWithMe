@@ -1,3 +1,4 @@
+//this is for the form that user fills in the starting
 const mongoose = require("mongoose");
 const StudyPlanSchema = new mongoose.Schema({
   userId: {
@@ -15,6 +16,10 @@ const StudyPlanSchema = new mongoose.Schema({
     enum: ["Easy", "Medium", "Hard"],
     default: "Medium",
   },
+  deadline:{
+    type:String,
+  },
+ 
   dailyStudyLimit: {
     type: Number,
     required: true,
@@ -24,9 +29,7 @@ const StudyPlanSchema = new mongoose.Schema({
     enum: ["Morning", "Afternoon", "Evening", "Night", "Flexible"],
     default: "Morning",
   },
-  deadline: {
-    type: String,
-  },
+
 });
 
 module.exports = mongoose.model("StudyPlan", StudyPlanSchema);

@@ -20,10 +20,10 @@ app.use(express.json());
 //*parses incoming JSON requests and makes the data available in req.body
 
 app.use("/api/studyplan", studyPlanRoutes); //this will show in the http url
-app.use("/api/schedule", scheduleRoutes);
+app.use("/api/schedule", scheduleRoutes );
 //mounts the study plan and schedule routes to the app.
 app.use(logger);
-app.use(cors());
+app.use(cors({origin:"*", allowedHeaders:["Content-Type", "Custom-Headers"]}));
 //allows requests from frontend to reach backend.
 //credentials: true allows cookies or tokens to be sent with requests.
 
@@ -72,6 +72,11 @@ app.post("/Components/login", async (req, res) => {
   });
 });
 
+app.get("/", (req, res) =>{
+    res.sendFile(path.join(__dirname, "Public", "index.html"))
+})
+
 app.listen(5000, () => {
   console.log(`Server is running on 5000`);
 });
+

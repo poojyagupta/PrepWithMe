@@ -1,6 +1,6 @@
 import "./globals.css";
-import Footer from "../../components/footer";
-import Navbar from "../../components/navbar";
+import Footer from "@/Components/footer";
+import Navbar from "@/Components/navbar";
 
 export const metadata = {
   title: "PrepWithMe",
