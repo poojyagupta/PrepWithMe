@@ -28,7 +28,7 @@ export default function GenerateSchedulePage() {
     try {
       const topicsMapParsed = JSON.parse(form.topicsMap);
 
-      const res = await fetch("https://super-duper-space-disco-4jgv4x4wvgwv25rp-5000.app.github.dev/api/schedule/generate", {
+      const res = await fetch("https://opulent-space-sniffle-gjvxgx75xvq2vwg6-5000.app.github.dev/api/schedule/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
